@@ -41,7 +41,7 @@
 }
 .color .list ul li h2 {
     font-size: 30px;
-    font-weight: 700px;
+    
     margin: 0 0 40px 0;
 }
 .recruit {
@@ -150,7 +150,6 @@
     background-size: cover;
     color: #fff;
     font-size: 40px;
-    font-weight: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
