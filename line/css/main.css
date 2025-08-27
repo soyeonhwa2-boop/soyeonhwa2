@@ -1,0 +1,53 @@
+@import url(common.css);
+body {
+    font-family: 'PT';
+    font-size: 17px;
+    font-weight: 400;
+    color: #555; /* 555555 - 6글자가 똑같으면 3개만 써도 됨*/
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40pt;
+    color: #1d1d1d;
+    margin: 0 0 14px 0;
+}
+h1 .p {
+    font-size: 17px;
+    font-weight: 400px;
+    color: #00b900;
+    line-height: 1.5;
+}
+h1.p.p {
+    font-size: 17px;
+    font-weight: 400px;
+    color: #555555;
+    line-height: 1.5;
+}
+.recruit .tit a {
+    border: 1px solid #00b900;
+    padding: 19px 34px 19px 34px;
+    display: inline-block;
+    border-radius: 42px;
+}
+h2 {
+    font-weight: 700px;
+    font-size: 40px;
+    color: #fff;
+}
+h2 .p {
+    font-size: larger;
+    size: 17px;
+    line-height: 1.5;
+    color: #fff;
+}
+h2 .p {
+    overflow-wrap: normal;
+    background-color: ;
+}
+
+
+
+

@@ -1,0 +1,101 @@
+/*웹폰트를 선언!*/
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), 
+    url(../fonts/Pretendard-Regular.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), 
+    url(../fonts/Pretendard-Bold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+/*body에 기본 글자 스타일(본문 스타일) 적용*/
+body {
+    font-family: 'Pretendard';
+    font-size: 17px;
+    font-weight: 400;
+    color: #555; /* 555555 - 6글자가 똑같으면 3개만 써도 됨*/
+    line-height: 1.5;
+}
+/*html태그의 기본스타일을 리셋 시킴
+  body에서 선언한 기본 스타일로 적용*/
+h1,h2,h3,h4,h5,h6 {
+    font-weight: inherit; /*브라우저가 주는 스타일을 무시해라고 생각한다*/
+    font-size: inherit;
+}
+strong {
+    font-weight: inherit;
+}
+em {
+    font-style: normal; /*기울어긴 글자를 바로 잡는것*/
+}
+a {
+    color: inherit;
+    text-decoration: none; /*글자바로 아래밑줄 삭제하는 것*/
+}
+ol,li,ul {
+    list-style: none; /*메뉴 앞 도형과 숫자를 삭제해주는 것.*/
+}
+* {
+    margin: 0;
+    padding: 0; /*와일드카드란 모든 태그 삭제 태그초기화 (여백삭제)*/
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; 
+}
+.nature {
+    margin: 187px 0 0 0;
+}
+.villa {
+    margin: 151px 0 0 0;
+    text-align: center;
+}
+.cycle {
+    margin: 158px 0 200px 0;
+    text-align: right;
+}
+.nature h1, /*.제목 h1,하는 이유는 폰트사이즈 넓이 컬러를 공통으로 주겠다고 하는 약속*/
+.villa h1,
+.cycle h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.nature h1{
+    margin:  0 0 24px 0;
+}
+.nature  strong {
+    font-weight: 700;
+    color: #094174;
+}
+.villa h1{
+    margin:  0 0 35px 0;
+}
+.villa strong {
+    color: #094174;
+}
+.cycle h1{
+    margin: 0 0 14px 0;
+}
+.cycle h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 70px 0 50px 0;
+}
+.cycle strong {
+    color: #094174;
+}
+/*cycle이라는 클래스명을 갖은 요소 안에 p태그 안에 있는 strong태그*/
+.cycle p strong {
+    font-weight: 700;
+    text-decoration: underline;
+    
+}
