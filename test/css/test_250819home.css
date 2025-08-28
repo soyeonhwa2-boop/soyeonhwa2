@@ -1,0 +1,36 @@
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), 
+    url(../fonts2/Pretendard-Regular.woff2) format('woff2'), 
+    url(../fonts2/Pretendard-Regular.woff2) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), 
+    url(../fonts2/Pretendard-Bold.woff2) format('woff2'), 
+    url(../fonts2/Pretendard-Bold.woff2) format('woff');
+}
+/*주석 - 설명글
+ body 태그는 모든 태그를 감싸는 태그
+ 글자의 기본스타일을 줌 - 글자스타일은 상속이 가능*/
+body {
+    font-family: 'Pretendard';
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;/* 행간-글자크기의 1.5배*/
+    color: #555555;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /*가운데정렬 0 띄고 auto*/
+
+}
+.tit_eng{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
