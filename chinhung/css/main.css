@@ -106,6 +106,20 @@ footer {
     color: rgba(255, 255, 255, 0.8);
 }
 
-
+footer .f_nav ul {
+    display: flex; /*li를 좌우로 배치*/
+    gap: 0 41px; /*위아래-좌우 여백값 */
+}
+footer .f_info {
+    margin: 31px 0 31px 0;
+    display: flex; /*address span 좌우배치*/
+    gap: 0 36px;
+}
+footer .f_info strong {
+    font-weight: 700;
+}
+footer .copyright {
+    
+}
 
 
