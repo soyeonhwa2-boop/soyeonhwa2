@@ -48,3 +48,7 @@ ol,li,ul {
     padding: 0; /*와일드카드란 모든 태그 삭제 태그초기화 (여백삭제)*/
     box-sizing: border-box;
 }
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
