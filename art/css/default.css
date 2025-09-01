@@ -18,6 +18,16 @@ a {
     color: inherit;
     text-decoration: none; /*밑줄삭제*/
 }
+button {
+    border: 0; /*0도 되고 none도 됨*/
+    background-color: transparent; /*투명컬러를 뜻함*/
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+    cursor: pointer; /*마우스 오버 시 포인터가 손바닥으로 변환하는 것을 말함*/
+}
 * {
     padding: 0;
     margin: 0; /* *(와일드 카드)는 모든 태그를 말함*/
