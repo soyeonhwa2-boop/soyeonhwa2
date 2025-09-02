@@ -83,6 +83,7 @@ header .gnb ul li a {
     color: #9D0722;
     padding: 17px 25px 17px 25px;
     border-radius: 30px;
+    /* transition: 0.5s; 마우스 커서 올렸을때 나오는 시간초 */
 }
 .biz .txt .btn_wrap a:hover { /*a에 마우스를 올렸을떄*/
     background-color: #9D0722;
@@ -125,6 +126,11 @@ header .gnb ul li a {
     padding: 17px 25px 17px 25px;
     border-radius: 30px;
     margin: 40px 0 0 0;
+    /* transition: 0.5s; */
+}
+.community .news .tit a:hover {
+    background-color: #fff;
+    color: #9D0722;
 }
 .community .news .list {
     width: 859px;
@@ -149,6 +155,10 @@ header .gnb ul li a {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.community .news .list ul li a:hover h3 {
+    color: #fff;
+    font-weight: 800;
+}
 .community .news .list ul li a span {
     color: rgba(255, 255, 255, 0.8);
 }
@@ -172,6 +182,10 @@ header .gnb ul li a {
     padding: 17px 25px 17px 25px;
     border-radius: 30px;
 }
+.community .media .tit a:hover {
+    background-color: #fff;
+    color: #9D0722;
+}
 .community .media .list {
     margin: 58px 0 0 0;
 }
@@ -194,6 +208,13 @@ header .gnb ul li a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s; /*이미지를 마우스 오버할때 천천히 움직여*/
+    /*transition 이미지를 마우스 오버했을때 움직이는 속도를 나타낼때 사용*/
+}
+.community .media .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1); /*마지막은 꼭 1*/
+    /*transform 이것만 사용하게 되면 마우스 커서했을때 따깍따깍 좀 딱딱하게 표현.
+    그래서 위에 207번에 transition 이것을 적용하면 좀 더 부드럽게 표현 할 수 있음*/
 }
 .community .media .list ul li a h3 {
     font-size: 20px;
@@ -215,4 +236,34 @@ footer {
     padding: 88px 0 49px 0;
     background-color: #1D1D1D;
     color: rgba(255, 255, 255, 0.8);
+}
+footer .wrapper {
+    display: flex; /*inner-family_site 좌우배치*/
+    justify-content: space-between;
+}
+footer .inner .f_nav ul  {
+    display: flex; /*li를 좌우로 배치*/
+    gap: 0 43px;
+}
+footer .inner .f_nav ul li a {
+    display: block;
+}
+footer .inner .f_nav ul li a:hover {
+    text-decoration: underline;
+} 
+footer .inner .f_info {
+    margin: 49px 0 42px 0;
+}
+footer .inner .f_info .group {
+    display: flex;
+    gap: 0 28px;/*위아래-좌우*/
+}
+footer .family_site button {
+    width: 214px;
+    line-height: 49px; /*행간으로 높이를 주면 글자는 위아래 가운데*/
+    background-color: #9D0722;
+    color: #fff;
+    display: block; /*디스플레이를 블록으로 주는게 안전*/
+    text-align: left;
+    padding: 0 0 0 29px;
 }
