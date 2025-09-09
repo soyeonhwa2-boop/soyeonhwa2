@@ -1,0 +1,10 @@
+@import url(common.css);
+.box {
+    width: 500pc;
+    height: 200px;
+    background-color: chocolate;
+    color: #fff;
+}
+.box.on {
+    background-color: red;
+}

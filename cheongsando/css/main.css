@@ -236,12 +236,15 @@ header .util .flow::before {
 .tour .list ul {
     display: flex; /*li를 좌우로 배치*/
     justify-content: space-between;
+    gap: 0 12px;
 }
 .tour .list ul li {
-    width: 15.15%; /*li 한개넓이 191px
+    /*width: 15.15%; /*li 한개넓이 191px
                 il 넓이 1260px
                 그럼 li의 ul의 값은?*/
-    height: 297px;
+    transition: 0.5s;
+    overflow: hidden; /*글자가 나간애들을 잡는다*/
+    flex: 1 1 0%;
 }
 .tour .list ul li a {
     display: flex; /*h3,p 하단정렬*/
@@ -275,7 +278,8 @@ header .util .flow::before {
     background-image: url(../images/tour4.jpg);
 }
 .tour .list ul li.on {
-    width: 51.66%;
+    /*width: 51.66%;*/
+    flex: 3 1 0%; /*앞에 4가 이미지를 커서할때 펼쳐지면서 크기가 커지는것*/
 }
 .tour .list ul li.on a {
     align-items: flex-start;
@@ -285,8 +289,12 @@ header .util .flow::before {
     font-size: 30px;
     margin: 0 0 9px 0;
 }
-.tour .list ul li.on a  p {
-    display: block;
+.tour .list ul li a p {
+    display: none;
+    white-space: nowrap; /*줄바꿈 금지*/ /*원래 안보이는거 기본은 안보임*/
+}
+.tour .list ul li.on a p {
+    display: block; /*on클래스만 들어갔을때 보이는거*/
 }
 .community {
     margin: 121px 0 0 0;
