@@ -576,10 +576,10 @@ footer .right_area .top {
 footer .right_area .top::before {
     content: "";
     position: absolute; /*top기준으로 정렬*/
-    left: 0;
+    left: 5px;
     top: 10px;
     width: 100%;
-    height: 8px;
+    height: 14px;
     background: url(../images/top.svg) no-repeat center center;
 }
 footer .right_area .top:hover {
