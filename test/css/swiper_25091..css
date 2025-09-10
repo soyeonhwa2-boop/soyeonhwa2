@@ -1,0 +1,99 @@
+@import url(common.css);
+.visual {
+    position: relative; /*ctrl_btn 정렬의 기준*/
+}
+.visual .swiper-slide {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: cover;
+    height: 800px;
+    color: #fff;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/swiper01.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/swiper02.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/swiper03.jpg);
+}
+.visual .swiper-slide h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.5;
+    margin: 261px 0 43px 0;
+}
+.visual .ctrl_btn {
+    position: absolute; /*visual 기준으로 정렬 위에 사진쪽으로 올라가야 하니까*/
+    left: 0;
+    bottom: 37px;
+    z-index: 1; /*사진안에 들어왔는데 안보임 1로 올려보이게 하기*/
+    color: #fff;
+    display: flex; /*버튼들이 옆으로 좌우로 배치하니까*/
+    justify-content: center; /*auto주고 이제 가운데로 정렬하기*/
+    align-items: center; /*flex 근처에 다 적기*/
+    gap: 0 5px;
+    width: 100%;
+}
+.visual .ctrl_btn button {
+    width: 27px;
+    height: 27px;
+}
+.visual .ctrl_btn .btn_prev,
+.visual .ctrl_btn .btn_next {
+    width: 27px; /*아이콘버튼 누르는 공간 가상의 공간 네모박스*/
+    height: 27px;
+    background: url(../images/swiper_arrow.svg) no-repeat center center; 
+}
+.visual .ctrl_btn .btn_next {
+    transform: rotate(180deg); /*오른쪽 화살표 반대방향으로 돌리기*/
+}
+.visual .ctrl_btn .paging {
+    width: auto; /*width :100%로 들어간 값을 취소시키려고 auto를 준다*/
+    font-weight: 800;
+}
+.visual .ctrl_btn .btn_play {
+    background: url(../images/swiper_play.svg) no-repeat center center; 
+    display: none; /*처음에는 안나오니까 none 플레이모양 */
+}
+.visual .ctrl_btn .btn_stop {
+    background: url(../images/swiper_stop.svg) no-repeat center center;
+}
+.news {
+    margin: 100px 0 100px 0;
+}
+.news .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 0 0 31px 0;
+}
+.news .list {
+    margin: 31px 0 0 0;
+}
+.news .list .swiper-slide a {
+    display: block;
+}
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 224px;
+}
+.news .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.news .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .list .swiper-slide a h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 37px 0 17px 0;
+}
+.news .list .swiper-slide a p {
+
+}

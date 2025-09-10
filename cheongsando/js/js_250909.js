@@ -14,8 +14,26 @@ $(document).ready(function(){
    })
 
    $('footer .right_area .family_site button.open').on('click', function(){
-    console.log('클릭함')
+    // console.log('여는 버튼 클릭')
     $('footer .right_area .family_site').addClass('open')
    })
-})
+   $('footer .right_area .family_site button.close').on('click', function(){
+    // console.log('닫는 버튼 클릭')
+    $('footer .right_area .family_site').removeClass('open')
+   })
+
+   /*footer .right_area .top를 클릭하면 브라우저가 자동 스크롤 되는것 */
+
+   $('footer .right_area .top').on('click', function(){
+    console.log('누름')
+    let scrolling = $(window).scrollTop()
+    console.log(scrolling)
+    //$(window).scrollTop(100) /*꼭대기로 올라가야 하니까 */
+    $('html, body').animate({
+        scrollTop : 0
+    }, 500) /*500 0.5초 top버튼 누르면 자동으로 스크롤이 위로 올라가는 것*/
+   })
+   
+   
+})//$(document).ready 무조건 맨아래
 
