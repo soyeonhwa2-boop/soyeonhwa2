@@ -134,7 +134,9 @@
 .news .btn_wrap button.btn_next {
     transform: rotate(180deg);
 }
-.news .btn_wrap button
+.news .btn_wrap button.swiper-button-disabled {
+    opacity: 0.5;
+}
 .news .btn_wrap a {
     background-image: url(../images/news_more.svg);
 }

@@ -55,7 +55,7 @@ const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요
 	// },
 	navigation: {
 		nextEl: '.news .btn_wrap button.btn_next',
-		prevEl: '.news .btn_wrap button.btn prev',
+		prevEl: '.news .btn_wrap button.btn_prev',
 	},
 });
 

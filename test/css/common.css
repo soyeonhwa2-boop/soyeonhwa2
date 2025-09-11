@@ -71,3 +71,14 @@ button {
     margin: -1px;
     overflow: hidden;
 }
+
+/*브라우저 사이즈 768px 부터 그 이하의 사이즈에서만 적용*/
+@media screen and (max-width:768px){
+body {
+    font-size: 16px;
+}   
+.wrapper {
+    width: auto;
+    margin: 0 16px; /*위아래 여백0 좌우여백16px라는 소리 스마트폰모바일 크기*/
+}
+} /*media */
