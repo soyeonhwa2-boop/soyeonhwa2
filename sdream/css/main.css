@@ -2,19 +2,3 @@
 @import url(fonts.css);
 @import url(common.css);
 
-h1 {
-    font-family: 'GMarketSans';
-    font-weight: 700;
-    line-height: 1.5;
-    color: #1d1d1d;
-    font-size: 40px;
-}   
-h2 {
-    margin: 50px 0 0 0;
-    font-family: 'GMarketSans';
-    font-weight: 700;
-    font-size: 24px;
-}
-.text {
-    width: 300px;
-}
