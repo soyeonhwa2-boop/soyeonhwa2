@@ -5,7 +5,7 @@ body {
     font-size: 17px;
     font-weight: 400;
     line-height: 1.5;
-    color: #555;
+    color: #1d1d1d;
     word-break: keep-all; /*단어별로 줄 바꿈 포토사진 아래 글자가 이쁘게 정렬시킬때*/
     word-wrap: break-word; /*단어가 너무길었을때 강제줄바꿈*/
 }
@@ -32,6 +32,11 @@ body {
 }
 
 /*기본 제목스타일*/
+.tit_top {
+    display: block;
+    color: #00A8E7;
+    margin: 0 0 18px 0;
+}
 .tit_gm {
     font-family: 'GMarketSans';
     font-weight: 700;
