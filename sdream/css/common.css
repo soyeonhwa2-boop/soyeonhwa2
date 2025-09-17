@@ -7,7 +7,9 @@ body {
     line-height: 1.5;
     color: #555;
     word-break: keep-all; /*단어별로 줄 바꿈 포토사진 아래 글자가 이쁘게 정렬시킬때*/
+    word-wrap: break-word; /*단어가 너무길었을때 강제줄바꿈*/
 }
+
 .wrapper {
     width: 1260px;
     margin: 0 auto; /*가운데 정렬*/
