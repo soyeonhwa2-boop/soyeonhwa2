@@ -2,3 +2,104 @@
 @import url(fonts.css);
 @import url(common.css);
 
+.visual {
+    position: relative; /*btn_wrap 정렬의 기준*/
+}
+.visual .swiper-slide {
+    height: 100vh; /*브라우저 옾이와 동일하게*/
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.visual .swiper-slide.bg1 {
+    background-image: url(../images/visual_bg1.jpg);
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/visual_bg2.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/visual_03.jpg);
+}
+.visual .swiper-slide h3 {
+    font-size: 60px;
+    margin: 0 0 37px 0;
+}
+.visual .swiper-slide p {
+    margin: 0 0 47px 0;
+}
+.visual .btn_wrap {
+    position: absolute;
+    left: calc(50% - 630px); /*1260의 절반*/
+    bottom: 87px;
+    z-index: 1; /*1이라도 있으면 올라옴*/
+    display: flex;
+    gap: 0 7px;
+}
+.visual .btn_wrap button {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .btn_wrap button.btn_prev {
+    background-image: url(../images/visual_prev.svg);
+}
+.visual .btn_wrap button.btn_play {
+    background-image: url(../images/visual_play.svg);
+}
+.visual .btn_wrap button.btn_stop {
+    background-image: url(../images/visual_stop.svg);
+}
+.visual .btn_wrap button.btn_next {
+    background-image: url(../images/visual_prev.svg);
+    transform: rotate(180deg);
+}
+@media screen and (max-width:768px){
+                .visual .swiper-slide {
+                   align-items: center;
+                }
+                .visual .swiper-slide h3 {
+                    font-size: 44px;
+                }
+                .visual .swiper-slide h3 br {
+                    display: none;/*줄바꿈 브라우저가 줄어들고 늘어날때 자동으로 줄바꿈 설정*/
+                }
+                .visual .swiper-slide p {
+                    margin: 0;  
+                }
+                .visual .btn_wrap {
+                    left: 50%; /*정렬의 기준 visual 넓이의 50%*/ 
+                    transform: translateX(-50%); /*버튼 가운데정렬
+                                                    나 자신 BTN_WRAP 넓이의 절반을 왼쪽으로 이동*/
+                    bottom: 5px;
+                }
+                .visual .btn_wrap button {
+                    border: 1px solid #fff;
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                .visual .btn_wrap button .btn_prev {
+                    background-image: url(../images/visual_prev.svg);
+                }
+                .visual .btn_wrap button .btn_play {
+                    background-image: url(../images/visual_play.svg);
+                }
+                .visual .btn_wrap button .btn_stop {
+                    background-image: url(../images/visual_stop.svg);
+                }
+                .visual .btn_wrap button .btn_next {
+                    background-image: url(../images/visual_prev.svg);
+                    transform: rotate(180deg);
+                }
+}/*@media*/
+footer {
+    margin: 500px;
+}
