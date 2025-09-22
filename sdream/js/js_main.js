@@ -58,4 +58,38 @@ $('footer .top').on('click', function(){
         scrollTop: 0
     }, 500)
 })
+
+$('header').on('mouseenter', function(){
+    $(this).addClass('fixed')
+    // console.log('header에 오버함')
+})
+$('header').on('mouseleave', function(){
+    //브라우저 스크롤 값이 0보다 크면 작동하면 안됨
+    //0이거나 0보다 작을때만--> 조건문
+    if(scrolling <= 0){
+        $(this).removeClass('fixed')
+        console.log('스크롤은 값이 0이거나 0보다 작다')
+    }
+})
+/*물건담는 바구니
+    문서가 로딩된 이후 단 1번 실행*/
+let scrolling
+scroll_chk()
+
+function scroll_chk(){
+    scrolling = $(window).scrollTop()
+    //스크롤값이 0보다 크면 header에 fixed 클래스를 추가함
+    if(scrolling > 0){
+        console.log('0보다 크다')
+        $('header').addClass('fixed')
+    }else{
+        console.log('0이다')
+        $('header').removeClass('fixed')
+    }
+}
+// console.log(scrolling)
+$(window).scroll(function(){
+    //스크롤 할때마다 1번 실행
+    scroll_chk()
+})
 })//맨끝
