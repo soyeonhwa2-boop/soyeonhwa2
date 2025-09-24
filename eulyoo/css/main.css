@@ -162,6 +162,10 @@ header.fixed .gnb .gnb_wrap ul li a {
     transform: translateY(30px);
     opacity: 0;
 }
+.visual .swiper-slide br {
+    display: none; /*pc는 한줄 모바일은 두 줄일때 index.html에서 준 br은 display - none
+                        모바일은 display - block*/
+}
 .visual .swiper-slide p {
     margin: 0 0 189px 0;
     transition: 1s;
@@ -258,6 +262,7 @@ header.fixed .gnb .gnb_wrap ul li a {
                 transition-delay: 0.5s;
                 transform: translateY(30px);
                 opacity: 0; */ 
+                display: block;
             }
             .visual .swiper-slide p {
                display: none;
