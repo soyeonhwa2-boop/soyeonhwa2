@@ -255,6 +255,122 @@
     }
 }/*@media*/
 
+.sdi {
+    margin: 100px 0 0 0;
+}
+.sdi .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 18px 0;
+}
+.sdi .inner {
+    margin: 38px 0 0 0;
+    display: flex;
+    gap: 0 22px;
+}
+.sdi .inner .item {
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    height: 222px;
+    width: calc(25% - 18px); /*나와 같은 사이즈가 있을때의 사이즈*/
+    padding: 28px 26px 0 26px;
+}
+.sdi .inner .item.career {
+    width: calc(50% - 12px); /*나와 같은 사이즈가 있을때의 사이즈*/
+    padding: 0;
+}
+.sdi .inner .item h3 {
+    font-size: 27px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 0 0 15px 0;
+}
+.sdi .inner .career .career_tit {
+    background-color: #3780FF;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    padding: 29px 33px 23px 33px;
+    display: flex;
+    gap: 0 41px;
+    align-items: center;
+}
+.sdi .inner .career .career_tit h3 {
+    color: #fff;
+}
+.sdi .inner .career .career_list ul {
+    display: flex;
+    margin: 48px 0 0 0;
+}
+.sdi .inner .career .career_list ul li {
+    width: 33.33%;
+    text-align: center;
+}
+.sdi .inner .career .career_list ul li a {
+    font-size: 17px;
+    font-weight: 400;
+    color: #1d1d1d;
+    display: block;
+}
+.sdi .inner .career .career_list ul li a br {
+    display: none; /*줄바꿈 지금 안할거임*/
+}
+@media screen and (max-width:1024px){
+    .sdi .inner .career .career_list ul li a br {
+        display: block; /*줄바꿈 적용*/
+    }
+}/*media 1024px*/
+@media screen and (max-width:768px){
+    .sdi {
+        margin: 60px 0 0 0;
+    }
+    .sdi .tit h2 {
+        font-size: 24px;
+        font-weight: 800;
+        color: #1d1d1d;
+        line-height: 1.3;
+        margin: 0 0 18px 0;
+    }
+    .sdi .inner {
+        flex-wrap: wrap; /*2줄 허용*/
+        gap: 16px 16px;
+    }
+    .sdi .inner .item {
+        width: calc(50% - 8px); 
+    }
+    .sdi .inner .item.career {
+        width: 100%; /*flex로 정렬되기 때문에 절대 auto가 안됨*/
+    }
+    .sdi .inner .item h3 {
+        font-size: 22px;
+        margin: 0 0 5px 0;
+    }
+    .sdi .inner .career .career_tit {
+       border-radius: 15px 15px 0 0;
+        padding: 29px 33px 23px 33px;
+        display: flex;
+        gap: 0 18px;
+        align-items: center;
+    }
+   .sdi .inner .career .career_list ul {
+         margin: 48px 0 0 0;
+    }
+    .sdi .inner .career .career_list ul li {
+        width: 33.33%;
+        text-align: center;
+    }
+    .sdi .inner .career .career_list ul li a {
+        font-size: 17px;
+        font-weight: 400;
+        color: #1d1d1d;
+        display: block;
+    }
+    .sdi .inner .career .career_list ul li a br {
+        display: none; /*줄바꿈 지금 안할거임*/
+    }
+}/*media 768px*/
+
 
 
 
