@@ -1,0 +1,39 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+header {
+    position: relative; /*wrap을 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    color: #fff;
+}
+header .wrapper {
+    display: flex; /*logo와 gnb 좌우정렬*/
+    justify-content: space-between; /*가로정렬 첫 번째 항목은 시작점에, 마지막 항목은 끝점에 붙이고 나머지 항목들 사이의 간격을 균등하게 만듬*/
+    align-items: center; /*세로정렬 모든 항목들을 세로 방향의 중앙에 위치*/
+}
+header .logo a {
+    display: block;
+    width: 124px;
+    height: 33px;
+    background: url(../imges/logo_w.svg) no-repeat center center / contain;
+    /*로고 안짤리고 모두 나와야 하기 때문에 comtain*/
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none;/*모바일에서만 보임*/
+}
+header .gnb .gnb_wrap ul {
+    display: flex; /*li를 좌우로 정렬*/
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    line-height: 100px;
+    font-size: 22px;
+    font-weight: 800;
+    padding: 0 27px;
+}
