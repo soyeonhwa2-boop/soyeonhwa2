@@ -155,9 +155,14 @@
                     <div class="tab_list">
                         <ul>
                             <!--선택된 탭에는 active 클래스 추가
-                            button안에 span태그한테 선택됨이라고 글자를 써줌-->
-                            <li class="item1 "><button>가족을 <span class="blind">선택됨</span></button></li>
-                            <li class="item2 active"><button>주인을<span class="blind"></span></button></li>
+                            button안에 span태그한테 선택됨이라고 글자를 써줌
+                            각자의 li에 li를 클릭하면 보일tab_item의 이름을 써 주는게 좋음
+                            나를 클릭하면 teb_item 중에 item1을 보리게 해줘 라고 기록해 놓는게 좋음
+                            그런데 class는 중복해서 다양한 값이 들어가서 class값 하기는 어려움
+                            그래서 별도의 속성명을 써서 사용 data-명칭 속성
+                            css에서 공식으로 지정되어 있는 속성이 아닌 퍼블이 임의로 만든 속성(많이 씀)-->
+                            <li class="item1 active" data-tab="item1"><button>가족을 <span class="blind">선택됨</span></button></li>
+                            <li class="item2 " data-tab="item2"><button>주인을 <span class="blind"></span></button></li>
                         </ul>
                     </div><!--tab_list-->
                     <div class="tab_content">
@@ -306,10 +311,9 @@
                                 <button class="next">
                                     <span class="blind">다음 팝업 보기</span>
                                     <i>
-                                        <svg  viewBox="0 0 16 16"  xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.1752 6.99922L7.2752 2.09922C7.0752 1.89922 6.97936 1.66588 6.9877 1.39922C6.99603 1.13255 7.1002 0.899218 7.3002 0.699218C7.5002 0.515885 7.73353 0.420051 8.0002 0.411718C8.26686 0.403385 8.5002 0.499218 8.7002 0.699218L15.3002 7.29922C15.4002 7.39922 15.471 7.50755 15.5127 7.62422C15.5544 7.74089 15.5752 7.86589 15.5752 7.99922C15.5752 8.13255 15.5544 8.25755 15.5127 8.37422C15.471 8.49089 15.4002 8.59922 15.3002 8.69922L8.7002 15.2992C8.51686 15.4826 8.2877 15.5742 8.0127 15.5742C7.7377 15.5742 7.50019 15.4826 7.30019 15.2992C7.10019 15.0992 7.0002 14.8617 7.0002 14.5867C7.0002 14.3117 7.1002 14.0742 7.30019 13.8742L12.1752 8.99922L1.0002 8.99922C0.716862 8.99922 0.479362 8.90338 0.287696 8.71172C0.0960289 8.52005 0.000196141 8.28255 0.000196165 7.99922C0.00019619 7.71588 0.096029 7.47838 0.287696 7.28672C0.479362 7.09505 0.716862 6.99922 1.0002 6.99922L12.1752 6.99922Z" />
+                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.1752 6.58711L7.2752 1.68711C7.0752 1.48711 6.97936 1.25377 6.9877 0.987108C6.99603 0.720442 7.1002 0.487108 7.3002 0.287109C7.5002 0.103775 7.73353 0.00794151 8.0002 -0.000391669C8.26686 -0.00872485 8.5002 0.0871089 8.7002 0.287109L15.3002 6.88711C15.4002 6.98711 15.471 7.09544 15.5127 7.21211C15.5544 7.32878 15.5752 7.45378 15.5752 7.58711C15.5752 7.72044 15.5544 7.84544 15.5127 7.96211C15.471 8.07878 15.4002 8.18711 15.3002 8.28711L8.7002 14.8871C8.51686 15.0704 8.2877 15.1621 8.0127 15.1621C7.7377 15.1621 7.50019 15.0704 7.30019 14.8871C7.10019 14.6871 7.0002 14.4496 7.0002 14.1746C7.0002 13.8996 7.1002 13.6621 7.30019 13.4621L12.1752 8.58711L1.0002 8.58711C0.716862 8.58711 0.479362 8.49127 0.287696 8.29961C0.0960289 8.10794 0.000196141 7.87044 0.000196165 7.58711C0.00019619 7.30377 0.096029 7.06627 0.287696 6.87461C0.479362 6.68294 0.716862 6.58711 1.0002 6.58711L12.1752 6.58711Z" />
                                         </svg>
-                                            
                                     </i>
                                 </button>
                                 <a href="#n" class="more">
@@ -329,8 +333,163 @@
                     </div><!--tab_content-->
                 </div><!--wrapper-->
             </section><!--find-->
-            <section class="slogan"></section><!--slogan-->
-            <section class="adopt"></section><!--adopt-->
+            <section class="slogan">
+                <div class="wrapper">
+                    <h2>공공장소<strong class="place"></strong>에서<br class="mo_only"> 주인 없이 떠도는 <br>
+                        동물<strong class="animal"></strong>을 발견한 경우 <br>
+                        관할 시군구청 또는<br class="mo_only"> 동물보호센터<strong class="center"></strong>에 <br>
+                        신고<strong class="call"></strong>하시기 바랍니다</h2>
+                    <p>소유자를 알 수 없는 동물을 신고하지 않고 알선·구매하는 경우, 포획하여 팔거나 판매하거나 죽일 목적으로 포획하는 경우에는 <br>
+                        동물보호법 제10조제3항제1호·제3호·제4호를 위반하여 2년 이하 징역이나 2천만원 이하 벌금이 부과됩니다.</p>
+                </div>
+            </section><!--slogan-->
+            <section class="adopt">
+                <div class="tit">
+                    <div class="wrapper"><h2>가족이 되어주세요</h2></div>
+                </div>
+                <div class="list">
+                    <div class="swiper"> 
+                        <ul class="swiper-wrapper"> 
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt01.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>브리티시 숏헤어</h3>
+                                    <p>10개월 된 남아, 중성화 완료</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt02.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>브리티쉬믹스</h3>
+                                    <p>꽁치는 재개발 지역에서 마당냥이로 지내던 아이였습니다.</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt03.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>푸들</h3>
+                                    <p>3세추정, 미니어처 푸들, 체중 : 6.5kg</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt04.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>진도믹스</h3>
+                                    <p>5개월이고 예방접종은 했고 중성화는 안했습니다.</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt05.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>러시안 블루</h3>
+                                    <p>1살 추정이나 보통 성묘보다도 조금 더 작은 개체구요</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt06.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>브리티시 숏헤어</h3>
+                                    <p>10개월 된 남아, 중성화 완료</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt07.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>푸들</h3>
+                                    <p>3세추정, 미니어처 푸들, 
+                                        체중 : 6.5kg</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt08.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>꼬똥믹스</h3>
+                                    <p>활발하고 사람도 좋아하는 이쁜 친구 입니다</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt09.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>말티푸</h3>
+                                    <p>사진보다 훨씬 작은 손바닥만한 귀여운 솜뭉치에요</p>
+                                </a>
+                            </li>  
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt10.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>러시안블루</h3>
+                                    <p>한걸음 한걸음 우아하게 여유를 즐기는 모습을 보여준답니다</p>
+                                </a>
+                            </li>  
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt11.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>푸들</h3>
+                                    <p>사람을 정말 잘따르고 조용한 인형같은 땅콩이랍니다</p>
+                                </a>
+                            </li>  
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt12.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>페르시안</h3>
+                                    <p>소심하고 겁이 많아도 , 만져주는 걸 좋아해요</p>
+                                </a>
+                            </li>  
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt13.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>코리안숏헤어</h3>
+                                    <p>사진에서보는것처럼 눈망울과 눈동자가 너무 매력적이며 올망졸망한 눈을가졌어요</p>
+                                </a>
+                            </li>    
+                        </ul>
+                    </div><!--swiper-->
+                </div><!--list-->
+                <div class="ctrl_btn">
+                    <button class="prev">
+                        <span class="blind">이전팝업보기</span>
+                        <i>
+                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.4 8.575L8.3 13.475C8.5 13.675 8.59583 13.9083 8.5875 14.175C8.57917 14.4417 8.475 14.675 8.275 14.875C8.075 15.0583 7.84167 15.1542 7.575 15.1625C7.30833 15.1708 7.075 15.075 6.875 14.875L0.275 8.275C0.175 8.175 0.104167 8.06667 0.0625 7.95C0.0208333 7.83333 0 7.70833 0 7.575C0 7.44167 0.0208333 7.31667 0.0625 7.2C0.104167 7.08333 0.175 6.975 0.275 6.875L6.875 0.275C7.05833 0.0916667 7.2875 0 7.5625 0C7.8375 0 8.075 0.0916667 8.275 0.275C8.475 0.475 8.575 0.7125 8.575 0.9875C8.575 1.2625 8.475 1.5 8.275 1.7L3.4 6.575H14.575C14.8583 6.575 15.0958 6.67083 15.2875 6.8625C15.4792 7.05417 15.575 7.29167 15.575 7.575C15.575 7.85833 15.4792 8.09583 15.2875 8.2875C15.0958 8.47917 14.8583 8.575 14.575 8.575H3.4Z" />
+                            </svg>
+                         </i>
+                    </button>
+                    <button class="next">
+                        <span class="blind">다음팝업보기</span>
+                        <i>
+                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.1752 6.58711L7.2752 1.68711C7.0752 1.48711 6.97936 1.25377 6.9877 0.987108C6.99603 0.720442 7.1002 0.487108 7.3002 0.287109C7.5002 0.103775 7.73353 0.00794151 8.0002 -0.000391669C8.26686 -0.00872485 8.5002 0.0871089 8.7002 0.287109L15.3002 6.88711C15.4002 6.98711 15.471 7.09544 15.5127 7.21211C15.5544 7.32878 15.5752 7.45378 15.5752 7.58711C15.5752 7.72044 15.5544 7.84544 15.5127 7.96211C15.471 8.07878 15.4002 8.18711 15.3002 8.28711L8.7002 14.8871C8.51686 15.0704 8.2877 15.1621 8.0127 15.1621C7.7377 15.1621 7.50019 15.0704 7.30019 14.8871C7.10019 14.6871 7.0002 14.4496 7.0002 14.1746C7.0002 13.8996 7.1002 13.6621 7.30019 13.4621L12.1752 8.58711L1.0002 8.58711C0.716862 8.58711 0.479362 8.49127 0.287696 8.29961C0.0960289 8.10794 0.000196141 7.87044 0.000196165 7.58711C0.00019619 7.30377 0.096029 7.06627 0.287696 6.87461C0.479362 6.68294 0.716862 6.58711 1.0002 6.58711L12.1752 6.58711Z" />
+                            </svg>
+                         </i>
+                    </button>
+                        <a href="#n" class="more">
+                            <span class="blind">더보기</span>
+                            <i>
+                                <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 8H1C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H6V1C6 0.716667 6.09583 0.479167 6.2875 0.2875C6.47917 0.0958333 6.71667 0 7 0C7.28333 0 7.52083 0.0958333 7.7125 0.2875C7.90417 0.479167 8 0.716667 8 1V6H13C13.2833 6 13.5208 6.09583 13.7125 6.2875C13.9042 6.47917 14 6.71667 14 7C14 7.28333 13.9042 7.52083 13.7125 7.7125C13.5208 7.90417 13.2833 8 13 8H8V13C8 13.2833 7.90417 13.5208 7.7125 13.7125C7.52083 13.9042 7.28333 14 7 14C6.71667 14 6.47917 13.9042 6.2875 13.7125C6.09583 13.5208 6 13.2833 6 13V8Z" />
+                                </svg>
+                            </i>
+                        </a>
+                </div><!--ctrl_btn-->
+                <!--글자를 감싸고 있는 rolling은 넓이가 브라우저 넓이와 동일
+                그 안에 글자를 감싸고 있는 p태그는 글자의 넓이를 그대로 인식해야 함(absolute)-->
+                <div class="rolling">
+                    <p>Because every life matters. Because every life matters.Because every life matters. Because every life matters.</p>
+                </div>
+            </section><!--adopt-->
             <section class="review"></section><!--review-->
         </div>
         <footer></footer>
