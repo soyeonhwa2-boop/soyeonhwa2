@@ -269,6 +269,20 @@ header.fixed .logo a {
 .visual {
     position: relative; /* ctrl_btn 정렬의 기준 */
 }
+.visual .spin {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    z-index: 10;
+    animation: spin 10s linear infinite;
+    /*애니메이션이름, 1번 실행하는데 걸리는 시간, 가속도, 무한반복*/
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
+
 .visual .swiper-slide {
     height: 100dvh; /* 브라우저 높이와 동일 */
     background-position: center center;
@@ -364,6 +378,9 @@ header.fixed .logo a {
     }
 }
 @media screen and (max-width:768px){
+            .visual .spin {
+                display: none;
+            }
             .visual .swiper-slide {
                 height: 400px; /* 브라우저 높이와 동일 */
             }
@@ -563,6 +580,7 @@ header.fixed .logo a {
 }/*@media 마지막*/
 
 .slogan {
+    position: relative;
     margin: clamp(98px, 16vw, 210px) 0 clamp(113px, 11vw, 142px) 0;
         /*배경색 없으면 margin, 있으면 padding*/
     text-align: center;
@@ -697,8 +715,8 @@ header.fixed .logo a {
 }
 .adopt .ctrl_btn {
     position: absolute; /*adopt 정렬의 기준*/
-    right: 0;
-    top: 0;
+    right: calc(50% - 630px); /*가운데 정렬 후 오른쪽으로*/
+    top: 217px;
     display: flex;
     gap: 0 10px;
 }
@@ -719,7 +737,10 @@ header.fixed .logo a {
     display: block;
     width: 15.57px;
 }
-.adopt .ctrl_btn .more a i {
+.adopt .more a span {
+    color: var(--color-title);
+}
+.adopt .ctrl_btn .more i {
     display: block;
     width: 14px;
 }
@@ -742,6 +763,7 @@ header.fixed .logo a {
     animation: adopt_roll 20s linear infinite;
     /*애니메이션이름, 3초동안 실행, 가속도X 무한반복*/
 }
+
 @keyframes adopt_roll {
     0% {transform: translateX(0);}
     100% {transform: translateX(-50.17%);}
@@ -773,10 +795,273 @@ header.fixed .logo a {
         width: 9px;
         margin-bottom: 5px;
     }
-
 }/*@media 마지막*/
+
+.review {
+    margin: clamp(113px, 10vw, 169px) 0 clamp(64px, 9vw, 116px) 0;
+    /*overflow-x: hidden; 아래 가로스크롤바 삭제해주는 기능*/
+}
+.review .wrapper {
+    position: relative; /*prev, next, more 정렬의기준 
+        delete element 브라우저에서 코딩 오른쪽마우스 클릭후 하나하나 없애고 찾아보기*/
+}
+.review h2 {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+    color: var(--color-title);
+    position: relative; /*before 정렬의 기준*/
+    padding: 0 0 12px 0;
+}
+.review h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100vw; /*브라우저(크기에 맞춰서 선이 들어감)의 넓이*/
+    height: 1px;
+    background-color: var(--color-line);
+}
+.review h2 span {
+    position: relative; /*before 정렬의 기준*/
+}
+.review h2 span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-main);
+}
+.review .list {
+    margin: clamp(19px, 4vw, 52px) 0 0 0;
+}
+.review .list .swiper-slide {
+    width: 250px;
+}
+.review .list .swiper-slide a {
+    display: block;
+}
+.review .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 297px;
+}
+.review .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /*이미자가 짤리지 않게 모두 나옴*/
+}
+.review .list .swiper-slide a h3 {
+    margin: 24px 0 15px 0;
+    font-size: var(--font-size-title2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+    color: var(--color-title);
     
+    /*1줄제한 제목이 한 줄로 나오게 만드는 css코딩방법*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.review .list .swiper-slide a p {
+    /*2줄제한 제목이 두 줄로 나오게 만드는 css코딩방법*/
+    overflow: hidden;
+    line-height: 1.5;
+    height: 3em; /*행간 곱하기 줄수는 단위 단위는em*/
+    
+    /*브라우저마다 일부는 적용될 수 있고 안될수도 있음!!
+        글 내용이 너무 길때 뒤에 ... 으로 표현하게 되는 방법*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.review .list .swiper-slide a .date {
+    margin: clamp(14px, 2vw, 24px) 0 0 0;
+    display: flex; /*strong-span 좌우배치*/
+    gap: 0 29px;
+}
+.review .list .swiper-slide a .date strong {
+    color: var(--color-main2);
+    position: relative; /*오른쪽 after 정렬의 기준*/
+}
+.review .list .swiper-slide a .date strong::after {
+    content: "";
+    position: absolute;
+    right: -14px;
+    top: 7px;
+    width: 1px;
+    height: 13px;
+    background-color: var(--color-line);
+}
+.review .list .swiper-slide a .date span {
+    color: var(--color-gray);
+}
+.review .prev,
+.review .next {
+    position: absolute; /*wrapper 정렬의 기준*/
+    left: -60px;
+    top: 40%;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-main);
+    color: var(--color-white);
+    fill: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review .next {
+    left: auto;
+    right: -60px;
+    transform: rotate(180deg);
+}
+.review .prev i,
+.review .next i {
+    display: block;
+    width: 15.57px;
+}
+.review .more {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.review .more a {
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+}
+.review .more a strong {
+    color: var(--color-main);
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+}
+.review .more a span {
+    color: var(--color-title);
+}
+.review .more a i {
+    display: block;
+    width: 20.53px;
+    fill: var(--color-title);
+    margin-top: 5px;
+}
+@media screen and (max-width:1400px){
+    .review .prev,
+    .review .next {
+        display: none;
+    }
+}/*@media 마지막*/
+@media screen and (max-width:768px){
+    .review .list .swiper-slide a p {
+        display: none;
+    }
+    .review .more a {
+        justify-content: center;
+        gap: 0;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: var(--color-main);
+    }
+    .review .more a strong {
+        display: none;
+    }
+    .review .more a span {
+        display: none;
+    }
+    .review .more a i {
+        width: 9px;
+        fill: var(--color-white);
+        margin-top: 0;
+    }
+}/*@media 마지막*/
+
 
 footer {
-    margin: 1500px 0 0 0;
+    background-color: var(--color-title);
+    color: var(--color-white80);
+    padding: 78px 0 80px 0; /*footer는 padding으로 주기*/
 }
+footer .wrapper {
+    position: relative; /*top버튼 정렬(컨텐츠 안에 있음버튼이)*/
+}
+footer .top {
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    right: 0;
+    top: 18px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--color-main2);
+    color: var(--color-white);
+    fill: var(--color-white);
+    display: flex; /*i-span 위 아래로 오게 하려고*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*버튼안에 가운데로 들어가게 만들어주는 것*/
+    line-height: 1; /*i-span 둘 사이의 여백때문에 사용*/
+}
+footer .top i {
+    display: block;
+    width: 13px;
+}
+footer .top span {
+    font-size: 12px;
+}
+footer .f_nav ul {
+    display: flex;
+    flex-wrap: wrap; /*모바일에서 여러줄*/
+    gap: 0 2.1176em; /*좌우 여백*/
+}
+footer .f_nav ul li {
+    position: relative; /*중간에 짝대기 그릴려고*/
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -1em;
+    top: 0.38em;
+    width: 1px;
+    height: 0.7059em; /*em을 사용하면 브라우저가 줄때 글자크기도 같이 줄어듬.*/
+    background-color: var(--color-white20);
+}
+footer .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .f_info {
+    margin: 32px 0 27px 96px;
+}
+footer .f_info span,
+footer .f_info address {
+    display: inline-block; /*글씨가 찢어지지 않게 하기 위해서*/
+    margin: 0 1.9412em 0.2em 0;
+}
+footer .copyright {
+    margin: 0 0 0 96px;
+}
+
+
+@media screen and (max-width:768px){
+    footer {
+        padding: 101px 0 100px 0; /*footer는 padding으로 주기*/
+    }
+    footer .top {
+        top: -53px;
+    }
+    footer .f_nav {
+        margin-right: 50px; /*오른쪽에 top버튼이 들어갈 자리*/
+    }
+    footer .f_info {
+        margin: 40px 0 34px 10px;
+    }
+    footer .copyright {
+        margin: 0 0 0 10px;
+    }
+}/*@media*/
