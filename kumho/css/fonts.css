@@ -12,6 +12,6 @@
 	font-weight: 700;
 	font-display: swap;
 	src: local('Pretendard Bold'), 
-    url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), 
-    url(../fonts/Pretendard-ExtraBold.woff) format('woff');
+    url(../fonts/Pretendard-Bold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Bold.woff) format('woff');
 }

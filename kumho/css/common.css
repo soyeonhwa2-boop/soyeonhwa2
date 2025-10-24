@@ -1,11 +1,16 @@
 /* 모든페이지에서 중복되는 스타일 */
 :root {
-    --color-title : #555;
-    --color-basic : #1d1d1d;
+    --color-title : #1d1d1d;
+    --color-basic : #555;
     --color-main : #A4161A;
     --color-white : #ffffff;
     --header-h : 90px;
     --wrapper-margin : 30px;
+}
+@media screen and (max-width:1024px){ /*768px는 거의 갤럭시 폴드화면 사이즈정도*/
+    :root {
+        --header-h : 70px;
+    }
 }
 @media screen and (max-width:768px){ /*768px는 거의 갤럭시 폴드화면 사이즈정도*/
     :root {
