@@ -82,3 +82,8 @@ body {
         display: none;
     }
 }
+
+/* ::selection {
+    background-color: var(--color-main);
+    color: #ffffff;
+} 글자에 드래그 하면 색이 나오게 하는 방법*/
