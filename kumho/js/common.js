@@ -79,7 +79,6 @@ $(document).ready(function(){
         }else{ //0이거나 0보다 작은경우 (fixed제거)
             $('header').removeClass('fixed')
         }
-
     }
     scroll_chk() //문서가 로딩되고 1번 실행
     $(window).scroll(function(){
