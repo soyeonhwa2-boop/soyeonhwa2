@@ -416,7 +416,7 @@ footer .f_util .family_site .family_close {
 
 
 /*열렸을때*/
-footer .f_util.family_site.open .family_open{
+footer .f_util .family_site.open .family_open{
     display: none;
 }
 footer .f_util .family_site.open .family_close {
