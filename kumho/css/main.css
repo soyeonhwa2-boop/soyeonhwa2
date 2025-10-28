@@ -460,7 +460,7 @@ section .tit h2 {
     background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.35742 4.6875L4.68652 9.35742L4.03711 8.71582L7.60938 5.14355H0.0126953V4.23145H7.60938L7.58789 4.20996L4.03711 0.658203L4.68652 0.0166016L9.35742 4.6875Z' fill='%231D1D1D' stroke='%231D1D1D' stroke-width='0.025'/%3E%3C/svg%3E%0A");
 }
 
-@media screen and (max-width:768px){
+@media screen and (min-width:768px){
     .news {
         margin: 60px 0 0 0;
     }
@@ -490,97 +490,161 @@ section .tit h2 {
     }
 }/*@media*/
 
-.service {
-    margin: 127px 0 0 0;
-}
-.service .tit {
-    display: none;
-}
-.service .list {
-    background: url(../images/main/service01.jpg) no-repeat center center / cover;
-    color: #fff;/*background 얘 때문에 색이 바꼈어*/
-    transition: 0.5s;
-}
-/*속성선택자
-    <div class="list" data-bg="service01"> 이 요소를 선택*/
-.service .list[data-bg="service01"] {
-    background-image: url(../images/main/service02.jpg);
-}
-.service .list[data-bg="service02"] {
-    background-image: url(../images/main/service03.jpg);
-}
-.service .list[data-bg="service03"] {
-    background-image: url(../images/main/service04.jpg);
-}
-.service .list ul {
-    display: flex;
-}
-.service .list li {
-    width: 33.33%;
-    height: 403px;
-    display: flex; /*폰트 옆으로 정렬*/
-    justify-content: center; /*가운데*/
-    align-items: center; /*가운데*/
-    text-align: center; /*가운데*/
-    position: relative; /*after 정렬의 기준*/
-}
-.service .list li::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 195px;
-    width: 1px;
-    height: 80px;
-    background-color: rgba(204, 204, 204, 0.4);
-}
-.service .list li:last-child::after {
-    display: none;
-}
-.service .list li a {
-    display: block;
-    transform: translateY(56px);
-    transition: transform 0.5s;
-}
-.service .list li:hover a {
-    transform: translateY(0);
-}
-.service .list li a strong {
-    font-weight: 700;
-    font-size: 17px;
-}
-.service .list li a h3 {
-    font-size: 4rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin: 13px 0 27px 0;
-}
-.service .list li a .more {
-    border: 1px solid #fff;
-    border-radius: 20px;
-    padding: 4px 49px 6px 25px;
-    position: relative;
-    display: inline-block;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-.service .list li:hover a .more {
-    opacity: 1;
-}
-.service .list li a .more::after {
-    content: "";
-    position: absolute;
-    right: 12px;
-    top: 13px;
-    width: 9.38px;
-    height: 9.38px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.35742 4.6875L4.68652 9.35742L4.03711 8.71582L7.60938 5.14355H0.0126953V4.23145H7.60938L7.58789 4.20996L4.03711 0.658203L4.68652 0.0166016L9.35742 4.6875Z' fill='white' stroke='white' stroke-width='0.025'/%3E%3C/svg%3E%0A");
+@media screen and (min-width:1025px){
+    .service {
+        margin: 127px 0 0 0;
+    }
+    .service .tit {
+        display: none;
+    }
+    .service .list {
+        background: url(../images/main/service01.jpg) no-repeat center center / cover;
+        color: #fff;/*background 얘 때문에 색이 바꼈어*/
+        transition: 0.5s;
+    }
+    /*속성선택자
+        <div class="list" data-bg="service01"> 이 요소를 선택*/
+    .service .list[data-bg="service01"] {
+        background-image: url(../images/main/service02.jpg);
+    }
+    .service .list[data-bg="service02"] {
+        background-image: url(../images/main/service03.jpg);
+    }
+    .service .list[data-bg="service03"] {
+        background-image: url(../images/main/service04.jpg);
+    }
+    .service .list ul {
+        display: flex;
+    }
+    .service .list li {
+        width: 33.33%;
+        height: 403px;
+        display: flex; /*폰트 옆으로 정렬*/
+        justify-content: center; /*가운데*/
+        align-items: center; /*가운데*/
+        text-align: center; /*가운데*/
+        position: relative; /*after 정렬의 기준*/
+    }
+    .service .list li::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 195px;
+        width: 1px;
+        height: 80px;
+        background-color: rgba(204, 204, 204, 0.4);
+    }
+    .service .list li:last-child::after {
+        display: none;
+    }
+    .service .list li a {
+        display: block;
+        transform: translateY(56px);
+        transition: transform 0.5s;
+    }
+    .service .list li:hover a {
+        transform: translateY(0);
+    }
+    .service .list li a strong {
+        font-weight: 700;
+        font-size: 17px;
+    }
+    .service .list li a h3 {
+        font-size: 4rem;
+        font-weight: 400;
+        line-height: 1.3;
+        margin: 13px 0 27px 0;
+    }
+    .service .list li a .more {
+        border: 1px solid #fff;
+        border-radius: 20px;
+        padding: 4px 49px 6px 25px;
+        position: relative;
+        display: inline-block;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    .service .list li:hover a .more {
+        opacity: 1;
+    }
+    .service .list li a .more::after {
+        content: "";
+        position: absolute;
+        right: 12px;
+        top: 13px;
+        width: 9.38px;
+        height: 9.38px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.35742 4.6875L4.68652 9.35742L4.03711 8.71582L7.60938 5.14355H0.0126953V4.23145H7.60938L7.58789 4.20996L4.03711 0.658203L4.68652 0.0166016L9.35742 4.6875Z' fill='white' stroke='white' stroke-width='0.025'/%3E%3C/svg%3E%0A");
+        }
+}/*@media*/
+@media screen and (min-width:1025px) and (max-width:1280px){
+    /*1280~1024 사이일 경우*/
+    .service .list li a h3 {
+        font-size: 24px;
+    }
+}/*@media*/ 
+@media screen and (max-width:1024px){
+    .service {
+        margin: 70px 0 0 0;
+    }
+    .service .list {
+        margin: 41px 0 0 0;
+    }
+    .service .list {
+        background: url(../images/main/service_mo.jpg) no-repeat center center / cover;
+        color: #2d2d2d;
+        padding: 69px var(--wrapper-margin) 59px var(--wrapper-margin);
+    }
+    .service .list ul {
+        display: flex;
+        gap: 0 16px;
+    }
+    .service .list ul li {
+        width: 33.33%;
+        border: 1px solid #fff;
+        border-radius: 15px;
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(7px);
+    }
+    .service .list ul li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 23px 181px 23px 17px;
+    }
+    .service .list ul li a::after {
+        content: "";
+        right: 0;
+        top: 0;
+        width: 11px;
+        height: 11px;
+        border: 1px solid #2d2d2d;
+        border-radius: 50%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg width='7' height='7' viewBox='0 0 7 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.55821 3.78125H0V3.09375H5.55821L2.94743 0.482969L3.4375 0L6.875 3.4375L3.4375 6.875L2.94743 6.39203L5.55821 3.78125Z' fill='%232D2D2D' fill-opacity='0.823529'/%3E%3Cpath d='M6.85742 3.4375L3.43652 6.85742L2.96484 6.39062L5.56738 3.79004L5.58887 3.76855H0.0126953V3.10645H5.58887L5.56738 3.08496L2.96484 0.483398L3.43652 0.0166016L6.85742 3.4375Z' stroke='%232D2D2D' stroke-opacity='0.823529' stroke-width='0.025'/%3E%3C/svg%3E%0A");
+    }
+    .service .list ul li a strong,
+    .service .list ul li a .more {
+        display: none;
+    } 
+    .service .list ul li a h3 {
+        font-size: 16px;
+        font-weight: 400;
+    }
+}/*@media*/
+@media screen and (max-width:768px){
+    .service .list ul li a {
+        display: block;
+        flex-direction: left;
+        justify-content: center;
+        text-align: center;
+        padding: 23px 181px 23px 17px;
+    }
 }
 
-
-
-footer {
-    margin: 1500px 0 0 0;
-}
